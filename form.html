@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Contacts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <div class="container">
+      <div class="form-contacts">
+        <form action="" class="">
+          <div class="header-form">
+            <span class="material-symbols-outlined arrow-back">
+              arrow_back
+            </span>
+            <div class="save-button">
+              <span class="material-symbols-outlined star-icon"> star </span>
+              <button type="button" class="btn-save" onclick="location.href='tableContacts.html'">Save</button>
+            </div>
+          </div>
+
+          <div class="contact-photo">
+            <img
+              src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png"
+              alt="Contact photo"
+              class="img-contact-photo"
+            />
+            <div class="contact-photo-btn">
+              <button type="button" class="btn-add-photo">
+                <span class="material-symbols-outlined add-photo-icon">
+                  add
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon"> person </span>
+            <div class="form-field-container">
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-input"
+                  id="first-name"
+                  placeholder=" "
+                  required
+                />
+                <label for="first-name" class="form-label">First Name</label>
+              </div>
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder=" "
+                  required
+                />
+                <label for="last-name" class="form-label">Last Name</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">domain</span>
+            <div class="form-field-container">
+              <div class="form-field">
+                <input type="text" class="form-input" placeholder=" " />
+                <label for="company" class="form-label">Company</label>
+              </div>
+              <div class="form-field">
+                <input type="text" class="form-input" placeholder=" " />
+                <label for="job-title" class="form-label">Job title</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">mail</span>
+            <div class="form-field-container">
+              <div class="form-field">
+                <input type="email" class="form-input" placeholder=" " />
+                <label for="email" class="form-label">Email</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-button">
+              <button class="btn">
+                <span class="material-symbols-outlined btn-icon">add</span> Add
+                email
+              </button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">call</span>
+            <div class="form-field-container multiple-input-row">
+              <div class="form-field input-country">
+                <select class="form-input">
+                  <option value="" selected disabled hidden>🇲🇽</option>
+                  <option value="MX">🇲🇽 Mexico (+52)</option>
+                  <option value="AF">🇦🇫 Afghanistan (+93)</option>
+                  <option value="CO">🇨🇴 Colombia (+57)</option>
+                </select>
+              </div>
+              <div class="form-field input-phone">
+                <input type="tel" class="form-input" placeholder=" " />
+                <label for="phone" class="form-label">Phone</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-button">
+              <button class="btn">
+                <span class="material-symbols-outlined btn-icon">add</span>
+                Add phone
+              </button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-button">
+              <button class="btn">
+                <span class="material-symbols-outlined btn-icon"
+                  >location_on</span
+                >Add address
+              </button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">cake</span>
+            <div class="form-field-container multiple-input-row birthday-row">
+              <div class="form-field">
+                <select
+                  name="month"
+                  id="month"
+                  class="form-input select-month"
+                  required
+                >
+                  <option value="" disabled selected hidden></option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
+                <label for="month" class="form-label">Month</label>
+              </div>
+
+              <div class="form-field">
+                <input
+                  type="number"
+                  class="form-input input-day"
+                  min="1"
+                  max="31"
+                  placeholder="DD"
+                />
+                <label for="day" class="form-label">Day</label>
+              </div>
+
+              <div class="form-field">
+                <input
+                  type="number"
+                  class="form-input input-placeholder input-year"
+                  min="1000"
+                  placeholder="YYYY"
+                />
+                <label for="year" class="form-label">Year (optional)</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon"
+              >sticky_note_2</span
+            >
+            <div class="form-field-container">
+              <div class="form-field">
+                <textarea
+                  cols="4"
+                  rows="2"
+                  placeholder=" "
+                  class="form-input notes"
+                ></textarea>
+                <label for="notes" class="form-label">Notes</label>
+              </div>
+            </div>
+          </div>
+          <div class="show-more">
+            <button class="btn-show-more">Show more</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module">
+      import { navbar } from "./js/navbar.js";
+      document.getElementById("navbar-container").innerHTML = navbar();
+    </script>
+  </body>
+</html>

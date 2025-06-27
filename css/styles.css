@@ -9,6 +9,7 @@
   --gray: #999;
   --light-gray: #b7b7b7;
   --hover-btn: #d0e4f8;
+  --button-form: #eef5ff;
 }
 
 html {
@@ -39,7 +40,9 @@ body,
 /* Navbar */
 
 .navbar {
+  box-shadow: -1px 6px 5px 0px rgba(0, 0, 0, 0.17);
   display: flex;
+  margin-bottom: 4rem;
   padding: 1rem 2rem;
 }
 
@@ -239,7 +242,7 @@ body,
 
 .btn {
   align-items: center;
-  background-color: #eef5ff;
+  background-color: var(--button-form);
   border-radius: 2rem;
   border: none;
   color: var(--primary-color);
@@ -326,11 +329,15 @@ select.form-input:invalid + .form-label {
 }
 
 .btn-show-more:hover {
-  background-color: #eef5ff;
+  background-color: var(--button-form);
   transition: border 0.2s ease;
 }
 
 /* Table Contacts */
+
+.contacts-title-container {
+  margin-bottom: 4rem;
+}
 
 .table-container {
   align-items: center;
@@ -342,8 +349,7 @@ select.form-input:invalid + .form-label {
 }
 
 .table-contacts {
-  box-shadow: -1px 6px 5px 0px rgba(0, 0, 0, 0.17);
-  width: 60%;
+  width: 100%;
 }
 
 .table-contacts,
@@ -353,7 +359,7 @@ select.form-input:invalid + .form-label {
 .table-data-cell {
   border-collapse: collapse;
   border: 1px solid var(--border-table);
-  margin: 2rem;
+  margin: 2rem 0;
   padding: 1rem;
 }
 
@@ -362,7 +368,7 @@ select.form-input:invalid + .form-label {
 }
 
 .table-header-row {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .table-header-row,

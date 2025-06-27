@@ -20,14 +20,22 @@
     <div id="navbar-container"></div>
     <div class="container">
       <div class="form-contacts">
-        <form action="" class="">
+        <form action="" id="formId">
           <div class="header-form">
-            <span class="material-symbols-outlined arrow-back">
-              arrow_back
-            </span>
+            <a href="index.html">
+              <span class="material-symbols-outlined arrow-back">
+                arrow_back
+              </span>
+            </a>
             <div class="save-button">
               <span class="material-symbols-outlined star-icon"> star </span>
-              <button type="button" class="btn-save" onclick="location.href='tableContacts.html'">Save</button>
+              <button
+                type="submit"
+                class="btn-save"
+                id="btn-save"
+              >
+                Save
+              </button>
             </div>
           </div>
 
@@ -62,6 +70,7 @@
                 <input
                   type="text"
                   class="form-input"
+                  id="last-name"
                   placeholder=" "
                   required
                 />
@@ -74,11 +83,11 @@
             <span class="material-symbols-outlined form-icon">domain</span>
             <div class="form-field-container">
               <div class="form-field">
-                <input type="text" class="form-input" placeholder=" " />
+                <input type="text" class="form-input" id="company" placeholder=" " />
                 <label for="company" class="form-label">Company</label>
               </div>
               <div class="form-field">
-                <input type="text" class="form-input" placeholder=" " />
+                <input type="text" class="form-input" id="job-title" placeholder=" " />
                 <label for="job-title" class="form-label">Job title</label>
               </div>
             </div>
@@ -88,7 +97,7 @@
             <span class="material-symbols-outlined form-icon">mail</span>
             <div class="form-field-container">
               <div class="form-field">
-                <input type="email" class="form-input" placeholder=" " />
+                <input type="email" class="form-input" id="emailContact" placeholder=" "/>
                 <label for="email" class="form-label">Email</label>
               </div>
             </div>
@@ -148,7 +157,6 @@
                   name="month"
                   id="month"
                   class="form-input select-month"
-                  required
                 >
                   <option value="" disabled selected hidden></option>
                   <option value="January">January</option>
@@ -212,9 +220,6 @@
         </form>
       </div>
     </div>
-    <script type="module">
-      import { navbar } from "./js/navbar.js";
-      document.getElementById("navbar-container").innerHTML = navbar();
-    </script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

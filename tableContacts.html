@@ -20,11 +20,13 @@
     <div id="navbar-container"></div>
 
     <div class="container">
+
       <div class="contacts-title-container">
         <h1 class="contacts-title">Contacts</h1>
       </div>
+
       <div id="table-contacts" class="table-contacts-container">
-        <table aria-label="Contact table" class="table-contacts">
+        <table aria-label="Contact table" class="table-contacts" id="contact-table">
           <thead class="table-header">
             <tr class="table-row">
               <th scope="col" class="table-header-cell" id="nameContact">
@@ -53,9 +55,6 @@
       </div>
     </div>
 
-    <script type="module">
-      import { navbar } from "./js/navbar.js";
-      document.getElementById("navbar-container").innerHTML = navbar();
-    </script>
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>

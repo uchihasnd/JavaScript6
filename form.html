@@ -29,13 +29,7 @@
             </a>
             <div class="save-button">
               <span class="material-symbols-outlined star-icon"> star </span>
-              <button
-                type="submit"
-                class="btn-save"
-                id="btn-save"
-              >
-                Save
-              </button>
+              <button type="submit" class="btn-save" id="btn-save">Save</button>
             </div>
           </div>
 
@@ -83,11 +77,21 @@
             <span class="material-symbols-outlined form-icon">domain</span>
             <div class="form-field-container">
               <div class="form-field">
-                <input type="text" class="form-input" id="company" placeholder=" " />
+                <input
+                  type="text"
+                  class="form-input"
+                  id="company"
+                  placeholder=" "
+                />
                 <label for="company" class="form-label">Company</label>
               </div>
               <div class="form-field">
-                <input type="text" class="form-input" id="job-title" placeholder=" " />
+                <input
+                  type="text"
+                  class="form-input"
+                  id="job-title"
+                  placeholder=" "
+                />
                 <label for="job-title" class="form-label">Job title</label>
               </div>
             </div>
@@ -97,7 +101,12 @@
             <span class="material-symbols-outlined form-icon">mail</span>
             <div class="form-field-container">
               <div class="form-field">
-                <input type="email" class="form-input" id="emailContact" placeholder=" "/>
+                <input
+                  type="email"
+                  class="form-input"
+                  id="emailContact"
+                  placeholder=" "
+                />
                 <label for="email" class="form-label">Email</label>
               </div>
             </div>
@@ -124,7 +133,12 @@
                 </select>
               </div>
               <div class="form-field input-phone">
-                <input type="tel" class="form-input" placeholder=" " />
+                <input
+                  type="tel"
+                  class="form-input"
+                  placeholder=" "
+                  id="phone-number"
+                />
                 <label for="phone" class="form-label">Phone</label>
               </div>
             </div>
@@ -157,6 +171,7 @@
                   name="month"
                   id="month"
                   class="form-input select-month"
+                  required
                 >
                   <option value="" disabled selected hidden></option>
                   <option value="January">January</option>

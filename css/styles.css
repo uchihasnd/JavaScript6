@@ -2,7 +2,6 @@
   --primary-color: #0b57d0;
   --secondary-color: #d0e4f8;
   --border-table: #eeeeee;
-  --row-table: #f5f5f5;
   --white: #ffffff;
   --black: #0f0f0f;
   --light-black: #333;
@@ -212,18 +211,6 @@ body,
   flex-basis: 22.5%;
 }
 
-.birthday-row .form-field:nth-child(1) {
-  flex: 0 0 40%;
-}
-
-.birthday-row .form-field:nth-child(2) {
-  flex: 0 0 20%;
-}
-
-.birthday-row .form-field:nth-child(3) {
-  flex: 0 0 40%;
-}
-
 .form-button {
   display: flex;
   flex: 1;
@@ -355,7 +342,6 @@ select.form-input:invalid + .form-label {
 .table-contacts,
 .table-header,
 .table-header-cell,
-.table-header-row,
 .table-data-cell {
   border-collapse: collapse;
   border: 1px solid var(--border-table);
@@ -367,17 +353,44 @@ select.form-input:invalid + .form-label {
   background-color: var(--white);
 }
 
-.table-header-row {
-  font-weight: 300;
+.table-row-body:hover {
+  background-color: var(--hover-btn);
 }
 
-.table-header-row,
 .table-data-cell {
   text-align: left;
 }
 
-.table-body .table-row:nth-child(even) {
-  background-color: var(--row-table);
+/* Loading spinner */
+
+.loading-spinner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.spinner-element {
+  font-weight: 500;
+  margin: 0.5rem;
+}
+
+.spinner {
+  border: 4px solid var(--white);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Media queries */
@@ -451,24 +464,6 @@ select.form-input:invalid + .form-label {
 
   .multiple-input-row {
     flex-direction: row;
-  }
-
-  .birthday-row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .birthday-row .form-field:nth-child(1) {
-    flex: 1 0 60%;
-    min-width: 0;
-  }
-
-  .birthday-row .form-field:nth-child(2) {
-    flex: 1 0 calc(40% - 8px);
-  }
-
-  .birthday-row .form-field:nth-child(3) {
-    flex: 0 0 100%;
   }
 
   .form-button {

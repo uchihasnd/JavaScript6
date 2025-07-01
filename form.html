@@ -113,15 +113,6 @@
           </div>
 
           <div class="form-row">
-            <div class="form-button">
-              <button class="btn">
-                <span class="material-symbols-outlined btn-icon">add</span> Add
-                email
-              </button>
-            </div>
-          </div>
-
-          <div class="form-row">
             <span class="material-symbols-outlined form-icon">call</span>
             <div class="form-field-container multiple-input-row">
               <div class="form-field input-country">
@@ -145,94 +136,18 @@
           </div>
 
           <div class="form-row">
-            <div class="form-button">
-              <button class="btn">
-                <span class="material-symbols-outlined btn-icon">add</span>
-                Add phone
-              </button>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-button">
-              <button class="btn">
-                <span class="material-symbols-outlined btn-icon"
-                  >location_on</span
-                >Add address
-              </button>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <span class="material-symbols-outlined form-icon">cake</span>
-            <div class="form-field-container multiple-input-row birthday-row">
-              <div class="form-field">
-                <select
-                  name="month"
-                  id="month"
-                  class="form-input select-month"
-                  required
-                >
-                  <option value="" disabled selected hidden></option>
-                  <option value="January">January</option>
-                  <option value="February">February</option>
-                  <option value="March">March</option>
-                  <option value="April">April</option>
-                  <option value="May">May</option>
-                  <option value="June">June</option>
-                  <option value="July">July</option>
-                  <option value="August">August</option>
-                  <option value="September">September</option>
-                  <option value="October">October</option>
-                  <option value="November">November</option>
-                  <option value="December">December</option>
-                </select>
-                <label for="month" class="form-label">Month</label>
-              </div>
-
-              <div class="form-field">
-                <input
-                  type="number"
-                  class="form-input input-day"
-                  min="1"
-                  max="31"
-                  placeholder="DD"
-                />
-                <label for="day" class="form-label">Day</label>
-              </div>
-
-              <div class="form-field">
-                <input
-                  type="number"
-                  class="form-input input-placeholder input-year"
-                  min="1000"
-                  placeholder="YYYY"
-                />
-                <label for="year" class="form-label">Year (optional)</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-row">
             <span class="material-symbols-outlined form-icon"
               >sticky_note_2</span
             >
-            <div class="form-field-container">
-              <div class="form-field">
-                <textarea
-                  cols="4"
-                  rows="2"
-                  placeholder=" "
-                  class="form-input notes"
-                ></textarea>
-                <label for="notes" class="form-label">Notes</label>
-              </div>
-            </div>
           </div>
           <div class="show-more">
             <button class="btn-show-more">Show more</button>
           </div>
         </form>
+      </div>
+      <div class="loading-spinner" id="spinner">
+        <div class="spinner spinner-element" aria-label="Loading spinner"></div>
+        <span class="spinner-element">Saving...</span>
       </div>
     </div>
     <script type="module" src="js/index.js"></script>

@@ -37,7 +37,7 @@ html {
   border-radius: 50%;
 }
 
-body{
+body {
   font-family: var(--font);
   font-size: var(--font-size-normal);
   font-weight: 400;
@@ -101,7 +101,6 @@ body{
 .arrow-back,
 .star-icon {
   cursor: pointer;
-  font-size: 2rem !important;
   padding: 0.5rem;
 }
 

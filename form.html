@@ -17,18 +17,18 @@
     />
   </head>
   <body>
-    <div id="navbar-container"></div>
+    <div id="navbar-table-contacts"></div>
     <div class="container">
       <div class="form-contacts">
         <form action="" id="formId">
           <div class="header-form">
-            <a href="index.html">
-              <span class="material-symbols-outlined arrow-back">
+            <a href="tableContacts.html">
+              <span class="material-symbols-outlined arrow-back rounded">
                 arrow_back
               </span>
             </a>
             <div class="save-button">
-              <span class="material-symbols-outlined star-icon"> star </span>
+              <span class="material-symbols-outlined star-icon rounded"> star </span>
               <button type="submit" class="btn-save" id="btn-save">Save</button>
             </div>
           </div>
@@ -37,11 +37,11 @@
             <img
               src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png"
               alt="Contact photo"
-              class="img-contact-photo"
+              class="img-contact-photo rounded"
             />
             <div class="contact-photo-btn">
-              <button type="button" class="btn-add-photo">
-                <span class="material-symbols-outlined add-photo-icon">
+              <button type="button" class="btn-add-photo flex-center rounded">
+                <span class="material-symbols-outlined add-photo-icon flex-center">
                   add
                 </span>
               </button>
@@ -114,15 +114,7 @@
 
           <div class="form-row">
             <span class="material-symbols-outlined form-icon">call</span>
-            <div class="form-field-container multiple-input-row">
-              <div class="form-field input-country">
-                <select class="form-input">
-                  <option value="" selected disabled hidden>🇲🇽</option>
-                  <option value="MX">🇲🇽 Mexico (+52)</option>
-                  <option value="AF">🇦🇫 Afghanistan (+93)</option>
-                  <option value="CO">🇨🇴 Colombia (+57)</option>
-                </select>
-              </div>
+            <div class="form-field-container">
               <div class="form-field input-phone">
                 <input
                   type="tel"
@@ -134,19 +126,13 @@
               </div>
             </div>
           </div>
-
-          <div class="form-row">
-            <span class="material-symbols-outlined form-icon"
-              >sticky_note_2</span
-            >
-          </div>
           <div class="show-more">
             <button class="btn-show-more">Show more</button>
           </div>
         </form>
       </div>
-      <div class="loading-spinner" id="spinner">
-        <div class="spinner spinner-element" aria-label="Loading spinner"></div>
+      <div class="loading-spinner flex-center" id="spinner">
+        <div class="spinner spinner-element rounded" aria-label="Loading spinner"></div>
         <span class="spinner-element">Saving...</span>
       </div>
     </div>

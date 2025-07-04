@@ -1,6 +1,15 @@
-import { navbar } from "./navbar.js";
+import { navbarFormContact, navbarTableContacts } from "./navbar.js";
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("navbar-container").innerHTML = navbar();
+  const navbarForm = document.getElementById("navbar-form-contact");
+  const navbarTable = document.getElementById("navbar-table-contacts");
+
+  if (navbarForm) {
+    navbarForm.innerHTML = navbarFormContact();
+  }
+
+  if (navbarTable) {
+    navbarTable.innerHTML = navbarTableContacts();
+  }
 
   const loadingSpinner = document.getElementById("spinner");
   const formElement = document.getElementById("formId");
@@ -22,12 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(contact),
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": "reqres-free-v1"
+        "x-api-key": "reqres-free-v1",
       },
     })
       .then((response) => response.json())
       .then(() => {
-        const storedContact = JSON.parse(localStorage.getItem("contacts")) || [];
+        const storedContact =
+          JSON.parse(localStorage.getItem("contacts")) || [];
         storedContact.push(contact);
         localStorage.setItem("contacts", JSON.stringify(storedContact));
         window.location.href = "tableContacts.html";

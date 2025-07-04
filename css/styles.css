@@ -1,4 +1,5 @@
 :root {
+  --font: "Roboto", sans-serif;
   --primary-color: #0b57d0;
   --secondary-color: #d0e4f8;
   --border-table: #eeeeee;
@@ -9,6 +10,9 @@
   --light-gray: #b7b7b7;
   --hover-btn: #d0e4f8;
   --button-form: #eef5ff;
+  --font-size-small: 1.2rem;
+  --font-size-normal: 1.4rem;
+  --font-size-big: 2.4rem;
 }
 
 html {
@@ -23,17 +27,31 @@ html {
   padding: 0;
 }
 
-body,
-.btn {
-  font-family: "Roboto", "Segoe UI Emoji", sans-serif;
-  font-size: 1.4rem;
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+body{
+  font-family: var(--font);
+  font-size: var(--font-size-normal);
   font-weight: 400;
   line-height: 1.5rem;
 }
 
-.container {
+.container,
+.container-table-contacts {
   margin: 0 auto;
   max-width: 1024px;
+}
+
+.container-table-contacts {
+  padding: 0 2rem;
 }
 
 /* Navbar */
@@ -90,7 +108,6 @@ body,
 .arrow-back:hover,
 .star-icon:hover {
   background-color: rgb(241, 235, 235);
-  border-radius: 50%;
   padding: 0.5rem;
 }
 
@@ -124,32 +141,23 @@ body,
 }
 
 .img-contact-photo {
-  border-radius: 50%;
   display: block;
   height: 162px;
   width: 162px;
 }
 
 .btn-add-photo {
-  align-items: center;
   background-color: var(--primary-color);
-  border-radius: 50%;
   border: 3px solid var(--white);
   bottom: 0.5rem;
   color: var(--white);
   cursor: pointer;
-  display: flex;
-  justify-content: center;
   padding: 1rem;
   position: absolute;
   right: 0.5rem;
 }
 
 /* Form */
-
-.form-contacts {
-  line-height: 1.5rem;
-}
 
 .form-row {
   align-items: center;
@@ -160,12 +168,14 @@ body,
 
 .form-icon {
   color: var(--light-black);
-  font-size: 2.4rem;
+  font-size: var(--font-size-big);
 }
+
 .form-contacts {
   align-items: center;
   display: flex;
   flex-direction: column;
+  line-height: 1.5rem;
   margin: 0 auto;
   max-width: 60rem;
 }
@@ -190,7 +200,7 @@ body,
   border: 1px solid var(--light-gray);
   display: flex;
   flex: 1;
-  font-size: 1.4rem;
+  font-size: var(--font-size-normal);
   margin-right: 1rem;
   outline: none;
   padding: 1rem 1.6rem;
@@ -200,11 +210,6 @@ body,
 
 .form-input:hover {
   border: 1px solid var(--black);
-}
-
-.multiple-input-row {
-  display: flex;
-  width: 100%;
 }
 
 .input-country {
@@ -220,36 +225,11 @@ body,
 }
 
 .material-symbols-outlined {
-  font-size: 1.4rem;
+  font-size: var(--font-size-normal);
 }
 
-.btn .btn-icon {
+.btn-icon {
   font-size: 1.8rem;
-}
-
-.btn {
-  align-items: center;
-  background-color: var(--button-form);
-  border-radius: 2rem;
-  border: none;
-  color: var(--primary-color);
-  display: flex;
-  font-weight: 600;
-  justify-content: center;
-  padding: 1rem;
-  width: 100%;
-}
-
-.btn:hover {
-  background-color: var(--hover-btn);
-  box-shadow: 0 1px 0 1px rgba(12, 1, 1, 0.25);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.notes {
-  height: 6rem;
-  resize: none;
 }
 
 .form-label {
@@ -275,7 +255,7 @@ body,
 .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
   color: var(--primary-color);
-  font-size: 1.2rem;
+  font-size: var(--font-size-small);
   left: 20px;
   top: -10px;
 }
@@ -290,13 +270,13 @@ body,
 
 select.form-input:not(:focus):invalid + .form-label {
   color: var(--gray);
-  font-size: 1.4rem;
+  font-size: var(--font-size-normal);
   top: 0.8rem;
 }
 
 select.form-input:invalid + .form-label {
   color: var(--light-black);
-  font-size: 1.2rem;
+  font-size: var(--font-size-small);
   left: 20px;
   top: -5px;
 }
@@ -324,15 +304,6 @@ select.form-input:invalid + .form-label {
 
 .contacts-title-container {
   margin-bottom: 4rem;
-}
-
-.table-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 .table-contacts {
@@ -364,8 +335,6 @@ select.form-input:invalid + .form-label {
 /* Loading spinner */
 
 .loading-spinner {
-  align-items: center;
-  display: flex;
   flex-direction: column;
   opacity: 0;
 }
@@ -376,12 +345,11 @@ select.form-input:invalid + .form-label {
 }
 
 .spinner {
-  border: 4px solid var(--white);
-  border-top: 4px solid var(--primary-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   animation: spin 2s linear infinite;
+  border-top: 4px solid var(--primary-color);
+  border: 4px solid var(--white);
+  height: 40px;
+  width: 40px;
 }
 
 @keyframes spin {
@@ -396,6 +364,11 @@ select.form-input:invalid + .form-label {
 /* Media queries */
 
 @media (max-width: 600px) {
+  .spinner {
+    height: 60px;
+    width: 60px;
+  }
+
   .contact-photo {
     left: 40%;
   }
@@ -406,11 +379,8 @@ select.form-input:invalid + .form-label {
   }
 
   .btn-add-photo {
-    align-items: center;
     bottom: 0;
-    display: flex;
     height: 40px;
-    justify-content: center;
     padding: 0.6rem;
     right: -1rem;
     width: 40px;
@@ -420,16 +390,8 @@ select.form-input:invalid + .form-label {
     margin-bottom: 8px;
   }
 
-  .btn {
-    margin-bottom: 0;
-    padding: 1rem 0.5rem;
-  }
-
   .add-photo-icon {
-    align-items: center;
-    display: flex;
     font-size: 2.2rem;
-    justify-content: center;
   }
 
   .form-icon {
@@ -456,14 +418,9 @@ select.form-input:invalid + .form-label {
   }
 
   .form-field-container {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-  }
-
-  .multiple-input-row {
-    flex-direction: row;
   }
 
   .form-button {
@@ -489,7 +446,7 @@ select.form-input:invalid + .form-label {
   .form-input:focus + .form-label,
   .form-input:not(:placeholder-shown) + .form-label {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: var(--font-size-small);
     left: 20px;
     top: 3px;
   }
@@ -498,13 +455,13 @@ select.form-input:invalid + .form-label {
 
   select.form-input:not(:focus):invalid + .form-label {
     color: var(--gray);
-    font-size: 1.4rem;
+    font-size: var(--font-size-normal);
     top: 2.4rem;
   }
 
   select.form-input:invalid + .form-label {
     color: var(--light-black);
-    font-size: 1.2rem;
+    font-size: var(--font-size-small);
     left: 20px;
     top: 3px;
   }
@@ -512,7 +469,7 @@ select.form-input:invalid + .form-label {
 
 @media (min-width: 601px) and (max-width: 900px) {
   .contact-photo {
-    left: 40%;
+    left: 20%;
   }
 
   .btn-add-photo {
@@ -530,7 +487,6 @@ select.form-input:invalid + .form-label {
   }
 
   .form-field-container {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
@@ -555,7 +511,7 @@ select.form-input:invalid + .form-label {
   .form-input:focus + .form-label,
   .form-input:not(:placeholder-shown) + .form-label {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: var(--font-size-small);
     left: 20px;
     top: 3px;
   }
@@ -564,18 +520,14 @@ select.form-input:invalid + .form-label {
 
   select.form-input:not(:focus):invalid + .form-label {
     color: var(--gray);
-    font-size: 1.4rem;
+    font-size: var(--font-size-normal);
     top: 2.5rem;
   }
 
   select.form-input:invalid + .form-label {
     color: var(--light-black);
-    font-size: 1.2rem;
+    font-size: var(--font-size-small);
     left: 20px;
     top: 3px;
-  }
-
-  .multiple-input-row {
-    flex-direction: row;
   }
 }

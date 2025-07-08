@@ -1,5 +1,6 @@
 import { navbarFormContact, navbarTableContacts } from "./navbar.js";
-document.addEventListener("DOMContentLoaded", function () {
+
+const navbar = () => {
   const navbarForm = document.getElementById("navbar-form-contact");
   const navbarTable = document.getElementById("navbar-table-contacts");
 
@@ -10,45 +11,42 @@ document.addEventListener("DOMContentLoaded", function () {
   if (navbarTable) {
     navbarTable.innerHTML = navbarTableContacts();
   }
+};
 
-  const loadingSpinner = document.getElementById("spinner");
-  const formElement = document.getElementById("formId");
-
-  const getContact = () => {
-    const contact = {
-      first_name: document.getElementById("first-name").value,
-      last_name: document.getElementById("last-name").value,
-      email: document.getElementById("emailContact").value,
-      phone_number: document.getElementById("phone-number").value,
-      job_title: document.getElementById("job-title").value,
-      company: document.getElementById("company").value,
-    };
-
-    loadingSpinner.style.opacity = "1";
-
-    fetch("https://reqres.in/api/users?delay=4", {
-      method: "POST",
-      body: JSON.stringify(contact),
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": "reqres-free-v1",
-      },
-    })
-      .then((response) => response.json())
-      .then(() => {
-        const storedContact =
-          JSON.parse(localStorage.getItem("contacts")) || [];
-        storedContact.push(contact);
-        localStorage.setItem("contacts", JSON.stringify(storedContact));
-        window.location.href = "tableContacts.html";
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+const contactDataValues = () => {
+  return {
+    first_name: document.getElementById("first-name").value,
+    last_name: document.getElementById("last-name").value,
+    email: document.getElementById("emailContact").value,
+    phone_number: document.getElementById("phone-number").value,
+    job_title: document.getElementById("job-title").value,
+    company: document.getElementById("company").value,
   };
+};
 
+const contactFetch = (contact) => {
+  fetch("https://reqres.in/api/users?delay=4", {
+    method: "POST",
+    body: JSON.stringify(contact),
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": "reqres-free-v1",
+    },
+  })
+    .then((response) => response.json())
+    .then(() => {
+      const storedContact = JSON.parse(localStorage.getItem("contacts")) || [];
+      storedContact.push(contact);
+      localStorage.setItem("contacts", JSON.stringify(storedContact));
+      window.location.href = "tableContacts.html";
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
+
+const createTable = () => {
   const contacts = JSON.parse(localStorage.getItem("contacts"));
-
   const tableBody = document.querySelector(".table-body");
 
   if (tableBody) {
@@ -70,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const jobCell = document.createElement("td");
       jobCell.classList.add("table-data-cell");
+
       if (contact.job_title && contact.company) {
         jobCell.textContent = `${contact.job_title} at ${contact.company}`;
       } else {
@@ -84,6 +83,20 @@ document.addEventListener("DOMContentLoaded", function () {
       tableBody.appendChild(row);
     });
   }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  navbar();
+  createTable();
+
+  const loadingSpinner = document.getElementById("spinner");
+  const formElement = document.getElementById("formId");
+
+  const getContact = () => {
+    loadingSpinner.style.opacity = "1";
+    const contact = contactDataValues();
+    contactFetch(contact);
+  };
 
   if (formElement) {
     formElement.addEventListener("submit", (event) => {

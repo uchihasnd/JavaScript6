@@ -38,9 +38,11 @@ const contactFetch = (contact) => {
       const storedContact = JSON.parse(localStorage.getItem("contacts")) || [];
       storedContact.push(contact);
       localStorage.setItem("contacts", JSON.stringify(storedContact));
+      localStorage.setItem("showSnackbar", "true");
       window.location.href = "tableContacts.html";
     })
     .catch((error) => {
+      alert("Error, try again");
       console.error("Error:", error);
     });
 };
@@ -49,45 +51,66 @@ const createTable = () => {
   const contacts = JSON.parse(localStorage.getItem("contacts"));
   const tableBody = document.querySelector(".table-body");
 
-  if (tableBody) {
-    contacts.forEach((contact) => {
-      const row = document.createElement("tr");
-      row.classList.add("table-row-body");
+  if (!tableBody) return;
 
-      const nameCell = document.createElement("td");
-      nameCell.classList.add("table-data-cell");
-      nameCell.textContent = `${contact.first_name} ${contact.last_name}`;
+  contacts.forEach((contact) => {
+    const row = document.createElement("tr");
+    row.classList.add("table-row-body");
 
-      const emailCell = document.createElement("td");
-      emailCell.classList.add("table-data-cell");
-      emailCell.textContent = contact.email;
+    const nameCell = document.createElement("td");
+    nameCell.classList.add("table-data-cell");
+    nameCell.textContent = `${contact.first_name} ${contact.last_name}`;
 
-      const phoneCell = document.createElement("td");
-      phoneCell.classList.add("table-data-cell");
-      phoneCell.textContent = contact.phone_number;
+    const emailCell = document.createElement("td");
+    emailCell.classList.add("table-data-cell");
+    emailCell.textContent = contact.email;
 
-      const jobCell = document.createElement("td");
-      jobCell.classList.add("table-data-cell");
+    const phoneCell = document.createElement("td");
+    phoneCell.classList.add("table-data-cell");
+    phoneCell.textContent = contact.phone_number;
 
-      if (contact.job_title && contact.company) {
-        jobCell.textContent = `${contact.job_title} at ${contact.company}`;
-      } else {
-        jobCell.textContent = `${contact.job_title || contact.company}`;
-      }
+    const jobCell = document.createElement("td");
+    jobCell.classList.add("table-data-cell");
 
-      row.appendChild(nameCell);
-      row.appendChild(emailCell);
-      row.appendChild(phoneCell);
-      row.appendChild(jobCell);
+    if (contact.job_title && contact.company) {
+      jobCell.textContent = `${contact.job_title} at ${contact.company}`;
+    } else {
+      jobCell.textContent = `${contact.job_title || contact.company}`;
+    }
 
-      tableBody.appendChild(row);
-    });
-  }
+    row.appendChild(nameCell);
+    row.appendChild(emailCell);
+    row.appendChild(phoneCell);
+    row.appendChild(jobCell);
+
+    tableBody.appendChild(row);
+  });
+};
+
+const showSnackbar = () => {
+  const message = `
+    <i class="material-symbols-outlined">check_circle</i>
+    <span>Contact saved successfully</span>
+  `;
+
+  const snackbar = document.getElementById("snackbar");
+  if (!snackbar) return;
+  snackbar.innerHTML = message;
+  snackbar.classList.add("snackbar");
+
+  setTimeout(() => {
+    snackbar.remove();
+  }, 3000);
 };
 
 document.addEventListener("DOMContentLoaded", function () {
   navbar();
   createTable();
+
+  if (localStorage.getItem("showSnackbar") === "true") {
+    showSnackbar();
+    localStorage.removeItem("showSnackbar");
+  }
 
   const loadingSpinner = document.getElementById("spinner");
   const formElement = document.getElementById("formId");
@@ -98,10 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
     contactFetch(contact);
   };
 
-  if (formElement) {
-    formElement.addEventListener("submit", (event) => {
-      event.preventDefault();
-      getContact();
-    });
-  }
+  if (!formElement) return;
+
+  formElement.addEventListener("submit", (event) => {
+    event.preventDefault();
+    getContact();
+  });
 });

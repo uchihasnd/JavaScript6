@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Contacts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar-table-contacts"></div>
+    <div class="container">
+      <div class="form-contacts">
+        <form action="" id="formId">
+          <div class="header-form">
+            <a href="tableContacts.html">
+              <span class="material-symbols-outlined arrow-back rounded">
+                arrow_back
+              </span>
+            </a>
+            <div class="save-button">
+              <span class="material-symbols-outlined star-icon rounded">
+                star
+              </span>
+              <button type="submit" class="btn-save" id="btn-save">Save</button>
+            </div>
+          </div>
+
+          <div class="contact-photo">
+            <img
+              src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png"
+              alt="Contact photo"
+              class="img-contact-photo rounded"
+            />
+            <div class="contact-photo-btn">
+              <button type="button" class="btn-add-photo flex-center rounded">
+                <span
+                  class="material-symbols-outlined add-photo-icon flex-center"
+                >
+                  add
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon"> person </span>
+            <div class="form-field-container">
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-input"
+                  id="first-name"
+                  placeholder=" "
+                  required
+                />
+                <label for="first-name" class="form-label">First Name</label>
+              </div>
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-input"
+                  id="last-name"
+                  placeholder=" "
+                  required
+                />
+                <label for="last-name" class="form-label">Last Name</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">domain</span>
+            <div class="form-field-container">
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-input"
+                  id="company"
+                  placeholder=" "
+                />
+                <label for="company" class="form-label">Company</label>
+              </div>
+              <div class="form-field">
+                <input
+                  type="text"
+                  class="form-input"
+                  id="job-title"
+                  placeholder=" "
+                />
+                <label for="job-title" class="form-label">Job title</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">mail</span>
+            <div class="form-field-container">
+              <div class="form-field">
+                <input
+                  type="email"
+                  class="form-input"
+                  id="emailContact"
+                  placeholder=" "
+                />
+                <label for="email" class="form-label">Email</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <span class="material-symbols-outlined form-icon">call</span>
+            <div class="form-field-container">
+              <div class="form-field input-phone">
+                <input
+                  type="tel"
+                  class="form-input"
+                  placeholder=" "
+                  id="phone-number"
+                />
+                <label for="phone" class="form-label">Phone</label>
+              </div>
+            </div>
+          </div>
+          <div class="show-more">
+            <button class="btn-show-more">Show more</button>
+          </div>
+        </form>
+      </div>
+      <div class="loading-spinner flex-center" id="spinner">
+        <div
+          class="spinner spinner-element rounded"
+          aria-label="Loading spinner"
+        ></div>
+        <span class="spinner-element">Saving...</span>
+      </div>
+    </div>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>

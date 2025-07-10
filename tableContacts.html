@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Contacts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="navbar-form-contact"></div>
+
+    <div id="snackbar"></div>
+
+    <div class="container-table-contacts">
+      <div class="contacts-title-container">
+        <h1 class="contacts-title">Contacts</h1>
+      </div>
+
+      <div id="table-contacts" class="table-contacts-container">
+        <table
+          aria-label="Contact table"
+          class="table-contacts"
+          id="contact-table"
+        >
+          <thead class="table-header">
+            <tr class="table-row">
+              <th scope="col" class="table-header-cell" id="nameContact">
+                Name
+              </th>
+              <th scope="col" class="table-header-cell" id="emailContact">
+                Email
+              </th>
+              <th scope="col" class="table-header-cell" id="phoneNumberContact">
+                Phone number
+              </th>
+              <th scope="col" class="table-header-cell" id="jobCompanyContact">
+                Job title & Company
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
